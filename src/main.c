@@ -3,9 +3,11 @@
 #include "pyatnashki.h"
 
 extern void print(int (*)[4], int);
-extern void check(int (*)[4], int, bool&);
-extern void zapolnenie(vector<int>&, int (*)[4], int);
-extern void position(int (*)[4], int, int&, int&);
+extern void check(int (*)[4], int, bool &);
+extern void zapolnenie(vector<int> &, int (*)[4], int);
+extern void position(int (*)[4], int, int &, int &);
+extern void restart(vector<int> &, int (*b)[4], int, int &, int &, int &);
+extern void menu();
 
 int main() {
 	int ik, jk, temp;
@@ -60,12 +62,19 @@ int main() {
 				} else {
 					break;
 				}
+			case 'r':
+				restart(a, pyat, 4, ik, jk, countt);
+			case 'e': {
+				restart(a, pyat, 4, ik, jk, countt);
+				system("clear");
+				menu();
+				break;
+			}
+				system("clear");
+				if (flag) {
+					cout << "You won!!!!!" << endl;
+					break;
+				};
 		}
-		system("clear");
-		if (flag) {
-			cout << "You won!!!!!" << endl;
-			break;
-		};
+		return 0;
 	}
-	return 0;
-}
