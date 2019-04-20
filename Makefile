@@ -11,7 +11,7 @@ folder1:
 folder2:
 	mkdir -p bin
 
-bin/pyatnashki.exe: build/main.o build/position.o build/zapoln.o build/print.o build/check.o
+bin/pyatnashki.exe: build/main.o build/position.o build/zapoln.o build/print.o build/check.o build/restart.o build/menu.o
 	g++ $(CFLAGS) $^ -o $@
 
 build/main.o: src/main.c src/pyatnashki.h
@@ -29,11 +29,15 @@ build/print.o: src/print.c src/pyatnashki.h
 build/check.o: src/check.c src/pyatnashki.h
 	$(OBJ)
 
+build/restart.o: src/restart.c src/pyatnashki.h
+	$(OBJ)
 
+build/menu.o: src/menu.c src/pyatnashki.h
+	$(OBJ)
 
 
 clean:
-	rm build/*.o
-	rm bin/*.exe
+	rm -f build/*.o
+	rm -f bin/*.exe
 	rm -R build
 	rm -R bin
