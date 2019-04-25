@@ -2,12 +2,12 @@
 
 Libconio 1.0 (C) 2004 FSL A.C.
 
-Basado en la implementacion de conio.h escrita 
-por Salvador Fernandez Barquin y adaptado a lib 
+Basado en la implementacion de conio.h escrita
+por Salvador Fernandez Barquin y adaptado a lib
 por Maximo Pech Jaramillo <makz@linuxmail.org>
 
-Se permite su uso, copia, distribucion y modificacion 
-bajo los términos de la GNU GPL versión 2.0 publicada 
+Se permite su uso, copia, distribucion y modificacion
+bajo los términos de la GNU GPL versión 2.0 publicada
 por la Free Software Foundation.
 
 *****************************************************/
@@ -33,34 +33,30 @@ void textcolor(int);
 void textbackground(int);
 int wherex(void);
 
-struct textinfo
-{
- int curx;
- int cury; 
+struct textinfo {
+    int curx;
+    int cury;
 };
 
-enum
-{
- BLACK,
- RED,
- GREEN,
- BROWN,
- BLUE,
- MAGENTA,
- CYAN,
- LIGHTGRAY,
- DARKGRAY,
- LIGHTRED,
- LIGHTGREEN,
- YELLOW,
- LIGHTBLUE,
- LIGHTMAGENTA,
- LIGHTCYAN,
- WHITE,
+enum {
+    BLACK,
+    RED,
+    GREEN,
+    BROWN,
+    BLUE,
+    MAGENTA,
+    CYAN,
+    LIGHTGRAY,
+    DARKGRAY,
+    LIGHTRED,
+    LIGHTGREEN,
+    YELLOW,
+    LIGHTBLUE,
+    LIGHTMAGENTA,
+    LIGHTCYAN,
+    WHITE,
 };
-
 
 int wherey(void);
 
 #endif
-
