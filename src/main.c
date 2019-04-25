@@ -28,6 +28,10 @@ int main()
         //  system("clear"); }
         check(pyat, 4, flag);
         // move(pyat,4,ik,jk);
+        if (flag) {
+            cout << "You won!!!!!" << endl;
+            break;
+        };
 
         switch (getch()) {
         case 'a':
@@ -85,10 +89,6 @@ int main()
         }
 
         system("clear");
-        if (flag) {
-            cout << "You won!!!!!" << endl;
-            break;
-        };
     }
 
     return 0;

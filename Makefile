@@ -11,7 +11,7 @@ folder1:
 folder2:
 	mkdir -p bin
 
-bin/pyatnashki.exe: build/main.o build/position.o build/zapoln.o build/print.o build/check.o build/restart.o build/menu.o build/view.o
+bin/pyatnashki.exe: build/main.o build/position.o build/zapoln.o build/print.o build/check.o build/restart.o build/menu.o build/view.o build/proverka.o
 	g++ $(CFLAGS) $^ -o $@
 
 build/main.o: src/main.c src/pyatnashki.h
@@ -36,6 +36,9 @@ build/menu.o: src/menu.c src/pyatnashki.h
 	$(OBJ)
 
 build/view.o: src/view.c src/pyatnashki.h
+	$(OBJ)
+
+build/proverka.o: src/proverka.c src/pyatnashki.h
 	$(OBJ)
 
 
