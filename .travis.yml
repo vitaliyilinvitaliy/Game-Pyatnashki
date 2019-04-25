@@ -3,6 +3,6 @@ language: C++
 dist: xenial
 
 script:
-  - git ls-files src/ | xargs clang-format -i && git diff --exit-code && make 
+  - git ls-files src/ |clang-format-6.0 -i *.c && git diff --exit-code && make 
 
 
