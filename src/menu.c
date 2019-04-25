@@ -10,7 +10,6 @@ void menu()
     fstream rules;
     string buff;
     while (1) {
-
         cout << "1.Start\n2.Rules\n3.Records\n4.Exit\n";
         switch (getch()) {
         case '1': {
