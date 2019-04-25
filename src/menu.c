@@ -1,10 +1,12 @@
 #include "pyatnashki.h"
 
+extern void view(FILE*);
+
 void menu()
 {
     int i;
     bool flag = 0;
-
+    FILE* tf;
     fstream rules;
     string buff;
     while (1) {
@@ -27,18 +29,25 @@ void menu()
                 rules >> buff;
                 cout << buff << " ";
             }
+            rules.close();
             cout << "\n\t...Press to key...\n";
             if (getch())
-                ;
-            system("clear");
+                system("clear");
+
             break;
         }
-        case '3':;
+        case '3': {
+            system("clear");
+            view(tf);
+            system("clear");
+            break;
+        };
         case '4': {
             exit(1);
         }
         }
         if (flag)
             break;
+        system("clear");
     }
 }
