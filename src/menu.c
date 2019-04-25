@@ -8,6 +8,7 @@ void menu()
     fstream rules;
     string buff;
     while (1) {
+		
         cout << "1.Start\n2.Rules\n3.Records\n4.Exit\n";
         switch (getch()) {
         case '1': {
@@ -27,11 +28,12 @@ void menu()
                 rules >> buff;
                 cout << buff << " ";
             }
-            cout << "\n\t...Press to key...\n";
+            rules.close();
+	    cout << "\n\t...Press to key...\n";
             if (getch())
-                ;
-            system("clear");
-            break;
+               system("clear");
+            
+		break;
         }
         case '3':;
         case '4': {
@@ -40,5 +42,6 @@ void menu()
         }
         if (flag)
             break;
-    }
+    	system("clear");
+	}
 }
