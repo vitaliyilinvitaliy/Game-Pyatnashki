@@ -1,47 +1,65 @@
-AccessModifierOffset: 0
-AlignEscapedNewlinesLeft: true
-AlignTrailingComments: false
-AllowAllParametersOfDeclarationOnNextLine: false
-AllowShortFunctionsOnASingleLine: false
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: false
-AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: false
-BinPackParameters: false
-BreakBeforeBinaryOperators: false
-BreakBeforeBraces: Allman
-BreakBeforeTernaryOperators: false
-BreakConstructorInitializersBeforeComma: false
-ColumnLimit: 100
-CommentPragmas: ''
-ConstructorInitializerAllOnOneLineOrOnePerLine: false
-ConstructorInitializerIndentWidth: 0
-ContinuationIndentWidth: 0
-Cpp11BracedListStyle: false
-DerivePointerBinding: false
-IndentCaseLabels: false
-IndentFunctionDeclarationAfterType: false
-IndentWidth: 4
 Language: Cpp
+AccessModifierOffset: -2
+
+AlignEscapedNewlinesLeft: false
+AlignTrailingComments: false
+PointerAlignment: Left
+
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: All
+
+AlwaysBreakTemplateDeclarations: false
+AlwaysBreakBeforeMultilineStrings: false
+# Only available on clang-format 3.6
+# AlwaysBreakAfterDefinitionReturnType: true
+BreakBeforeBinaryOperators: false
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializersBeforeComma: false
+BreakBeforeBraces: Stroustrup
+
+BinPackParameters: true
+ColumnLimit: 80
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+DerivePointerAlignment: false
+ExperimentalAutoDetectBinPacking: false
+IndentCaseLabels: false
+IndentWrappedFunctionNames: false
+IndentFunctionDeclarationAfterType: false
 MaxEmptyLinesToKeep: 2
-NamespaceIndentation: None
-ObjCSpaceAfterProperty: true
+KeepEmptyLinesAtTheStartOfBlocks: true
+ObjCSpaceAfterProperty: false
 ObjCSpaceBeforeProtocolList: true
-PenaltyBreakBeforeFirstCallParameter: 100
-PenaltyBreakComment: 100
-PenaltyBreakFirstLessLess: 0
-PenaltyBreakString: 100
-PenaltyExcessCharacter: 1
-PenaltyReturnTypeOnItsOwnLine: 20
-PointerBindsToType: 100
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeParens: Always
-SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 1
-SpacesInAngles: false
-SpacesInCStyleCastParentheses: false
-SpacesInContainerLiterals: false
+
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakString: 1000
+PenaltyBreakFirstLessLess: 120
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 60
+
+Cpp11BracedListStyle: false
+Standard: Cpp03
+
+TabWidth: 8
+UseTab: Always
+NamespaceIndentation: None
+IndentWidth: 8
+ConstructorInitializerIndentWidth: 8
+ContinuationIndentWidth: 8
+
 SpacesInParentheses: false
-Standard: Cpp11
-TabWidth: 4
-UseTab: Never
+SpacesInAngles: false
+SpaceInEmptyParentheses: false
+SpacesInCStyleCastParentheses: false
+SpacesInContainerLiterals: true
+SpaceBeforeAssignmentOperators: true
+SpacesBeforeTrailingComments: 1
+SpaceBeforeParens: ControlStatements
+
+CommentPragmas: '^ IWYU pragma:'
+ForEachMacros: [ foreach, Q_FOREACH, BOOST_FOREACH ]
+DisableFormat: false
+
