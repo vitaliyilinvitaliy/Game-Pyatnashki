@@ -1,4 +1,4 @@
-language: C++
+language: CPP
 
 dist: xenial
 
