@@ -3,6 +3,6 @@ language: CPP
 dist: xenial
 
 script:
-  - git ls-files src/ |  make 
+  - git ls-files src/ | xargs clang-format -i && make 
 
 
