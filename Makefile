@@ -47,5 +47,5 @@ build/proverka.o: src/proverka.c src/pyatnashki.h
 clean:
 	rm -f build/*.o
 	rm -f bin/*.exe
-	rm -R build
-	rm -R bin
+	rm -f build
+	rm -f bin
