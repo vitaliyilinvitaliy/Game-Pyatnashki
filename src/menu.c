@@ -22,15 +22,14 @@ void menu()
             rules.open("../Rul/Rules.txt");
             if (!rules.is_open()) {
                 cout << "error" << endl;
-                ;
                 exit(1);
             }
-            while (!rules.eof())
+            while (!rules.eof()) {
                 rules >> buff;
-            cout << buff << " ";
-
+                cout << buff << " ";
+            }
             rules.close();
-            cout << "\n\t...Press to key...\n";
+            cout << "\n\t\t\t...Press to key...\n";
             if (getch())
                 system("clear");
 
