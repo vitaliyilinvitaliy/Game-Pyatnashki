@@ -1,6 +1,6 @@
 #pragma once
-#include "conio.h"
 #include "catch.hpp"
+#include "conio.h"
 #include <algorithm>
 #include <ctime>
 #include <fstream>

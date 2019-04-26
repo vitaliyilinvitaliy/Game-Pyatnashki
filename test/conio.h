@@ -34,27 +34,27 @@ void textbackground(int);
 int wherex(void);
 
 struct textinfo {
-    int curx;
-    int cury;
+  int curx;
+  int cury;
 };
 
 enum {
-    BLACK,
-    RED,
-    GREEN,
-    BROWN,
-    BLUE,
-    MAGENTA,
-    CYAN,
-    LIGHTGRAY,
-    DARKGRAY,
-    LIGHTRED,
-    LIGHTGREEN,
-    YELLOW,
-    LIGHTBLUE,
-    LIGHTMAGENTA,
-    LIGHTCYAN,
-    WHITE,
+  BLACK,
+  RED,
+  GREEN,
+  BROWN,
+  BLUE,
+  MAGENTA,
+  CYAN,
+  LIGHTGRAY,
+  DARKGRAY,
+  LIGHTRED,
+  LIGHTGREEN,
+  YELLOW,
+  LIGHTBLUE,
+  LIGHTMAGENTA,
+  LIGHTCYAN,
+  WHITE,
 };
 
 int wherey(void);
