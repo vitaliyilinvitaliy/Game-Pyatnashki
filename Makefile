@@ -73,6 +73,5 @@ build/test/position-test.o: test/position-test.c test/pyatnashki.h
 
 clean:
 	rm -f build/*.o
-	rm -f bin/*.exe
-	rm -R bin
+	rm -f bin/pyatnashki.exe
 	rm -R build
