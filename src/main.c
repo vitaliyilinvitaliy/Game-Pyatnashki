@@ -26,11 +26,12 @@ int main() {
     check(pyat, 4, flag);
     // move(pyat,4,ik,jk);
     if (flag) {
-	system("clear");      
-	cout << "!!!!!You won!!!!!\nPress to key/n" << endl;
-	getch();      
-	system("clear");
-	menu();
+      system("clear");
+      cout << "!!!!!You won!!!!!" << endl << "  Press to key" << endl;
+      getch();
+      system("clear");
+      restart(a, pyat, 4, ik, jk, countt);
+      menu();
     };
 
     switch (getch()) {
