@@ -33,4 +33,6 @@ TEST_CASE("Poisk pozicii", "[POSITION]") {
   int p[4][4] = {{2, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 0, 12}, {13, 14, 15, 0}};
 
   REQUIRE(position(p, N, ik, jk) == 4);
+
+  cout << "[POSITION]" << endl;	
 }

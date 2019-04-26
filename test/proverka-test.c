@@ -21,4 +21,5 @@ TEST_CASE("TEST PROVERKA", "[PROVERKA]") {
   REQUIRE(proverka(b) == 0);
   vector<int> n = {13, 3, 11, 1, 5, 12, 9, 4, 10, 6, 15, 2, 0, 7, 14, 8};
   REQUIRE(proverka(n) == 1);
+  cout << "[PROVERKA]" << endl;
 }
