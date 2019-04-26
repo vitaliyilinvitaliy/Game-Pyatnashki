@@ -4,9 +4,10 @@ extern void view(FILE*);
 
 void menu()
 {
-    int i;
+    
     bool flag = 0;
-    FILE* tf;
+    FILE* fil=NULL;
+	
     fstream rules;
     string buff;
     while (1) {
@@ -37,7 +38,7 @@ void menu()
 
         case '3':
             system("clear");
-            view(tf);
+            view(fil);
             system("clear");
             break;
 

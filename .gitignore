@@ -1,3 +1,4 @@
-bin/*.exe
+bin/pyatnashki.exe
 *.swp
-build/*.o
+build/test/*.o
+build/src/*.o

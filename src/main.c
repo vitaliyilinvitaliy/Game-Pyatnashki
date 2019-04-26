@@ -6,12 +6,12 @@ extern void zapolnenie(vector<int>&, int (*)[4], int);
 extern void position(int (*)[4], int, int&, int&);
 extern void restart(vector<int>&, int (*b)[4], int, int&, int&, int&);
 extern void menu();
-extern void print(int (*)[4], int, int, double);
+extern void print(int (*)[4], int, int);
 
 int main()
 {
-    clock_t start;
-    double now;
+    
+   
     int ik, jk, temp, countt = 0;
     bool flag;
     vector<int> a(16);
@@ -19,10 +19,10 @@ int main()
     zapolnenie(a, pyat, 5);
     position(pyat, 4, ik, jk);
     menu();
-    start = clock();
+
 
     while (1) {
-        print(pyat, 4, countt, now);
+        print(pyat, 4, countt);
         //  while(1){now = ( clock() - start ) / (double)
         //  CLOCKS_PER_SEC;cout<<now<<endl; print(pyat,4,countt,now); sleep(1);
         //  system("clear"); }

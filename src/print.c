@@ -1,6 +1,6 @@
 #include "pyatnashki.h"
 
-void print(int (*a)[4], int N, int countt, double now)
+void print(int (*a)[4], int N, int countt)
 {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < 4; j++) {

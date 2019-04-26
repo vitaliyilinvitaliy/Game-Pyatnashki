@@ -16,3 +16,14 @@ bool proverka(vector<int>& a)
     else
         return 0;
 }
+
+
+TEST_CASE("TEST PROVERKA","[PROVERKA]")
+{
+	vector<int>b={1,2,3,4,5,6,7,8,9,10,11,12,13,15,14,0};
+	REQUIRE(proverka(b)==0);
+	vector<int>n={13,3,11,1,5,12,9,4,10,6,15,2,0,7,14,8};
+        REQUIRE(proverka(n)==1);
+
+
+}
