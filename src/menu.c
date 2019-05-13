@@ -1,14 +1,13 @@
 #include "pyatnashki.h"
 
-extern void play_game(RenderWindow &,bool &);
-extern void records(RenderWindow &,bool&);
+
 
 void menu(RenderWindow & window) {
 
 
     bool flag_close=false;
     Texture fon;
-        fon.loadFromFile("fon.jpg");
+        fon.loadFromFile("../images/fon.jpg");
         Sprite fonsprite(fon);
 
 
@@ -17,7 +16,7 @@ void menu(RenderWindow & window) {
     fonsprite.setPosition(0,0);
 
         Texture rul;
-        rul.loadFromFile("rules.jpg");
+        rul.loadFromFile("../images/rules.jpg");
         Sprite rulsprite(rul);
 
     rulsprite.setPosition(0,0);
@@ -98,9 +97,9 @@ void menu(RenderWindow & window) {
         if (Mouse::isButtonPressed(Mouse::Left))
         {
 
-            if (menuNum == 1) { window.close;isMenu=false;}
-            if (menuNum == 2) {  window.close;isMenu=false;}
-            if (menuNum == 3)  {  window.close;isMenu=false; }
+            if (menuNum == 1) { window.close();isMenu=false;}
+            if (menuNum == 2) {  window.close();isMenu=false;}
+            if (menuNum == 3)  {  window.close();isMenu=false; }
             if (menuNum == 4)  {  window.close();isMenu = false;}
 
         }
