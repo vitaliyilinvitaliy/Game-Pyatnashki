@@ -1,14 +1,18 @@
 #include "pyatnashki.h"
 
-extern record rec;
+record rec;
 extern void sort_dat(vector<vector<int>>&);
 
 void records(RenderWindow& app, bool& flag_close) {
+	vector<vector<int>> s;
+	sort_dat(s);
+	FILE* tf;
+
 	Font font;
-	font.loadFromFile("../image/ar2.ttf");
+	font.loadFromFile("../font/ar2.ttf");
 
 	Texture fon;
-	fon.loadFromFile("../image/fon.jpg");
+	fon.loadFromFile("../images/fon.jpg");
 	Sprite fonsprite(fon);
 
 	Text rec_;
