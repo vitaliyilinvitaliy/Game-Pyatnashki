@@ -1,5 +1,7 @@
 #include "pyatnashki.h"
 
+extern void records(RenderWindow&, bool&);
+
 void menu(RenderWindow& window) {
 	bool flag_close = false;
 	Texture fon;
@@ -110,8 +112,7 @@ void menu(RenderWindow& window) {
 				}
 			}
 			if (menuNum == 3) {
-				window.close();
-				isMenu = false;
+				records(window, isMenu);
 			}
 			if (menuNum == 4) {
 				window.close();
