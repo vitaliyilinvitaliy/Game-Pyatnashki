@@ -2,6 +2,10 @@
 
 void play_game(RenderWindow & window,bool &flag_close)
 {
+	bool flag_upor=true;
+	vector<int> a(16);
+        int pyat[4][4];
+	
 	Texture fon_game;
         fon_game.loadFromFile("../images/fon_game.jpg");
         Sprite fon_gamesprite(fon_game);
@@ -24,5 +28,5 @@ void play_game(RenderWindow & window,bool &flag_close)
 	window.clear();
 	window.draw(fon_gamesprite);
         window.display();
-                
+    }                
 }
