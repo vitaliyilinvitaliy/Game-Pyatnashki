@@ -2,5 +2,9 @@
 
 void records(RenderWindow& app, bool& flag_close) {
 	Font font;
-	font.loadFromFile("ar2.ttf");
+	font.loadFromFile("../image/ar2.ttf");
+
+	Texture fon;
+	fon.loadFromFile("../image/fon.jpg");
+	Sprite fonsprite(fon);
 }
