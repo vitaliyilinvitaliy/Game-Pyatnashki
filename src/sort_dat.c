@@ -1,5 +1,7 @@
 #include "pyatnashki.h"
 
+extern record rec;
+
 void sort_dat(vector<vector<int>> &s) {
 	FILE *tf;
 
