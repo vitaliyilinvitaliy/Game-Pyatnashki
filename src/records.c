@@ -1,5 +1,8 @@
 #include "pyatnashki.h"
 
+extern record rec;
+extern void sort_dat(vector<vector<int>>&);
+
 void records(RenderWindow& app, bool& flag_close) {
 	Font font;
 	font.loadFromFile("../image/ar2.ttf");
