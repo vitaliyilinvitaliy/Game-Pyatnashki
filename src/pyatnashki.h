@@ -15,8 +15,8 @@ using namespace sf;
 using namespace std;
 
 struct record {
-	int count;
-	clock_t timer;
+  int count;
+  clock_t timer;
 };
 
-#endif  // PYATNASHKI_H
+#endif // PYATNASHKI_H
