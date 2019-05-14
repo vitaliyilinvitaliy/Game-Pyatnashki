@@ -12,4 +12,11 @@ void records(RenderWindow& app, bool& flag_close) {
 	rec_.setFont(font);
 	rec_.setCharacterSize(45);
 	rec_.setColor(Color::White);
+
+	Text head;
+	head.setFont(font);
+	head.setString("PLAYER\t\t\tCOUNT\t\t\t\t\TIME");
+	head.setCharacterSize(45);
+	head.setColor(Color::Green);
+	head.setPosition(50, 5);
 }
