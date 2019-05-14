@@ -1,5 +1,7 @@
 #include "pyatnashki.h"
 
+extern record rec;
+
 void write_records(int count, clock_t time_finish) {
 	FILE *tf;
 	rec.count = count;
