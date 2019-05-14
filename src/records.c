@@ -26,4 +26,57 @@ void records(RenderWindow& app, bool& flag_close) {
 	del.setCharacterSize(30);
 	del.setColor(Color::Red);
 	del.setPosition(50, 310);
+
+	while (!Keyboard::isKeyPressed(Keyboard::Escape)) {
+		Event event;
+		while (app.pollEvent(event)) {
+			if (event.type == Event::Closed) {
+				app.close();
+				flag_close = false;
+				return;
+			}
+		}
+
+		if (Keyboard::isKeyPressed(Keyboard::Delete)) {
+			FILE* t2f;
+			tf = fopen("records.dat", "rb");
+			t2f = fopen("delete.dat", "wb");
+			int i = 1;
+			fread(&rec, sizeof(rec), 1, tf);
+			while (!feof(tf)) {
+				if (i <= 0) {
+					fwrite(&rec, sizeof(rec), 1, t2f);
+				}
+				i++;
+				fread(&rec, sizeof(rec), 1, tf);
+			}
+			fclose(tf);
+			remove("records.dat");
+			fclose(t2f);
+			rename("delete.dat", "records.dat");
+			s.clear();
+		}
+		app.clear();
+		app.draw(fonsprite);
+		app.draw(head);
+		app.draw(del);
+
+		int x = 50, y = 50;
+		for (int i = 0; i < s.size(); i++) {
+			ostringstream playerrec_i, playerrec_count,
+			    playerrec_timer;
+			playerrec_i << i + 1;
+			playerrec_count << s[i][0];
+			playerrec_timer << s[i][1];
+			rec_.setString(playerrec_i.str() + "\t\t\t\t\t\t" +
+				       playerrec_count.str() + "\t\t\t\t\t\t" +
+				       playerrec_timer.str());
+
+			rec_.setPosition(x, y);
+
+			app.draw(rec_);
+			y += 30;
+		}
+		app.display();
+	}
 }
