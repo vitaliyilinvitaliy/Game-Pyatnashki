@@ -1,8 +1,7 @@
 CFLAGS = -Wall 
-SFML = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+SFML = -lsfml-graphics -lsfml-window -lsfml-system 
 OBJ = g++ $(CFLAGS) -c $< -o $@ $(SFML) 
  
-
 .PHONY: clean 
 
 all: folder1 folder2 bin/pyatnashki.exe
