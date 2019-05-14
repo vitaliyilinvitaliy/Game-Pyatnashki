@@ -9,4 +9,20 @@ void play_game(RenderWindow & window,bool &flag_close)
         Texture p;
         p.loadFromFile("../images/p2.jpg");
         Sprite psprite(p);
+
+	while(!Keyboard::isKeyPressed(Keyboard::Escape))
+    {
+        
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+               { window.close();flag_close=false; return;}
+            
+        }
+
+	window.clear();
+	window.draw(fon_gamesprite);
+        window.display();
+                
 }
