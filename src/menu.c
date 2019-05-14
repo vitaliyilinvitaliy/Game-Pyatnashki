@@ -1,6 +1,8 @@
 #include "pyatnashki.h"
 
 extern void records(RenderWindow&, bool&);
+extern void play_game(RenderWindow &,bool&);
+
 
 void menu(RenderWindow& window) {
 	bool flag_close = false;
@@ -94,8 +96,7 @@ void menu(RenderWindow& window) {
 
 		if (Mouse::isButtonPressed(Mouse::Left)) {
 			if (menuNum == 1) {
-				window.close();
-				isMenu = false;
+				play_game(window,isMenu);
 			}
 			if (menuNum == 2) {
 				window.draw(rulsprite);
