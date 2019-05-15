@@ -13,7 +13,7 @@ folder2:
 	mkdir -p bin
 
 
-bin/pyatnashki.exe: build/src/main.o build/src/menu.o build/src/records.o build/src/sort_dat.o build/src/write_records.o build/src/play_game.o build/src/zapolnenie.o
+bin/pyatnashki.exe: build/src/main.o build/src/menu.o build/src/records.o build/src/sort_dat.o build/src/write_records.o build/src/play_game.o build/src/zapolnenie.o build/src/check.o build/src/proverka.o
 	g++ $(CFLAGS) $^ -o $@ $(SFML)
 
 build/src/main.o: src/main.c src/pyatnashki.h
@@ -35,6 +35,12 @@ build/src/play_game.o: src/play_game.c src/pyatnashki.h
 	$(OBJ)
 
 build/src/zapolnenie.o: src/zapolnenie.c src/pyatnashki.h
+	$(OBJ)
+
+build/src/check.o: src/check.c src/pyatnashki.h
+	$(OBJ)
+
+build/src/proverka.o: src/proverka.c src/pyatnashki.h
 	$(OBJ)
 
 clean:

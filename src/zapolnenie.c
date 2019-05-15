@@ -1,5 +1,7 @@
 #include "pyatnashki.h"
 
+extern bool proverka(vector<int> &);
+
 void zapolnenie(vector<int> &a, int (*b)[4], int N) {
   {
     bool flag = 0;
@@ -18,7 +20,7 @@ void zapolnenie(vector<int> &a, int (*b)[4], int N) {
           k++;
         }
       }
-      
+      flag = proverka(a);
     } while (!flag);
   }
 }
