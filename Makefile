@@ -1,5 +1,5 @@
 CFLAGS = -Wall 
-SFML = -lsfml-graphics -lsfml-window -lsfml-system 
+SFML = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 OBJ = g++ $(CFLAGS) -c $< -o $@ $(SFML) 
  
 .PHONY: clean 

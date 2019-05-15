@@ -28,7 +28,7 @@ void play_game(RenderWindow &window, bool &flag_close) {
    sound_no_sprite.setPosition(600,10);
 
    Font font;
-        if (!font.loadFromFile("ar2.ttf"))
+        if (!font.loadFromFile("../font/ar2.ttf"))
         {
          // ошибка...
         }
@@ -68,19 +68,55 @@ void play_game(RenderWindow &window, bool &flag_close) {
         bool flag_sound=true;
 
 
-   while (!Keyboard::isKeyPressed(Keyboard::Escape)) {
+    while(!Keyboard::isKeyPressed(Keyboard::Escape))
+    {
+        Vector2i pos = Mouse::getPosition(window);
+        int x = (pos.x-50)/50;
+        int y = (pos.y-20)/50;
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+               { window.close();flag_close=false; return;}
+            if (event.type == Event::MouseButtonPressed)
+            {
+                if (Mouse::isButtonPressed(Mouse::Left))
+                {
+                   
 
-    Event event;
-    while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) {
-        window.close();
-        flag_close = false;
-        return;
-      }
-    }
+                    if(y==0&&x==11&&flag_sound==true)
+                    {
+                        music.setVolume(0);
+                        flag_sound=false;
+                    }else{
+                        if(y==0&&x==11&&flag_sound==false)
+                        {
+
+                                music.setVolume(100);
+                                flag_sound=true;
+                        }
+                        }
+
+                }
+              /*  if (Mouse::isButtonPressed(Mouse::Right))
+                {
+                  for(int i=0,qw=1;i<4;i++)
+                  {
+                      for(int j=0;j<4;j++,qw++)
+                      {
+                          pyat[i][j]=qw;
+                      }
+                  }
+                    pyat[3][3]=0;
+                    cou=rand()%23+21;
+                }*/
+            }
+        }
+
 
     window.clear();
     window.draw(fon_gamesprite);
     window.display();
-  }
+  
+}
 }
