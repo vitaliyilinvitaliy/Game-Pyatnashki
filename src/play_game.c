@@ -4,7 +4,7 @@
 extern void zapolnenie(vector<int>&,int(*)[4],int);
 extern void write_records(int,clock_t);
 extern void dvig(int(*)[4],int,int,int&);
-
+extern void check(int(*)[4],bool&);
 
 void play_game(RenderWindow &window, bool &flag_close) {
   bool flag_upor = true;
@@ -166,5 +166,42 @@ void play_game(RenderWindow &window, bool &flag_close) {
         window.draw(ed);
 
         window.display();
-    }         
+	 check(pyat,flag_upor);
+         if(flag_upor)
+         {
+              write_records(cou, timer_finish/200000);
+             break;
+         }
+    }
+
+	music.setVolume(0);
+    Text end_play;
+    end_play.setFont(font);
+    end_play.setCharacterSize(60);
+    end_play.setColor(Color::White);
+    timer.setPosition(140,53);
+    count.setPosition(245,113);
+    music_end.play();//воспроизводим музыку
+    while(!Keyboard::isKeyPressed(Keyboard::Escape)){
+
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::Closed)
+            { window.close();flag_close=false; return;}
+
+        }
+            window.clear();
+            window.draw(winsprite);
+            count.setCharacterSize(45);
+
+            window.draw(count);
+
+
+            window.draw(timer);
+            window.display();
+
+    }
 }
+
+
