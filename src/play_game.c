@@ -2,14 +2,17 @@
 
 
 //extern void zapolnenie(vector<int>&,int(*)[4],int);
-
+extern void write_records(int,clock_t);
 
 void play_game(RenderWindow &window, bool &flag_close) {
   bool flag_upor = true;
   vector<int> a(16);
   int pyat[4][4],cou=0,i=0,j=0;
 //  zapolnenie(a, pyat, 5);
-
+   
+   clock_t timer_start=clock();
+   clock_t timer_finish=0;
+   
    Texture fon_game;
    fon_game.loadFromFile("../images/fon_game.jpg");
    Sprite fon_gamesprite(fon_game);
@@ -137,7 +140,12 @@ void play_game(RenderWindow &window, bool &flag_close) {
                count.setString(playercount.str());//задаем строку тексту и вызываем сформированную выше строку методом .str()
                 count.setPosition(370,170);//задаем позицию текста, отступая от центра камеры
 
-                
+             ostringstream time;
+                timer_finish=clock();
+                timer_finish-=timer_start;
+
+                time << timer_finish/200000;
+                timer.setString(time.str()+" SEC");
 
 
 
@@ -156,7 +164,5 @@ void play_game(RenderWindow &window, bool &flag_close) {
         window.draw(ed);
 
         window.display();
-         
-        
-    }
+    }         
 }
