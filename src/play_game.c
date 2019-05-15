@@ -3,6 +3,8 @@
 
 extern void zapolnenie(vector<int>&,int(*)[4],int);
 extern void write_records(int,clock_t);
+extern void dvig(int(*)[4],int,int,int&);
+
 
 void play_game(RenderWindow &window, bool &flag_close) {
   bool flag_upor = true;
@@ -91,7 +93,7 @@ void play_game(RenderWindow &window, bool &flag_close) {
                 if (Mouse::isButtonPressed(Mouse::Left))
                 {
                     
-
+	    	 dvig(pyat,y,x,cou);
                     if(y==0&&x==11&&flag_sound==true)
                     {
                         music.setVolume(0);
