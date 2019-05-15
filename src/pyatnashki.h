@@ -1,10 +1,10 @@
 #ifndef PYATNASHKI_H
 #define PYATNASHKI_H
 
-#include <Audio.hpp>
-#include <Graphics.hpp>
-#include <System.hpp>
-#include <Window.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 
 #include <algorithm>
 #include <ctime>
