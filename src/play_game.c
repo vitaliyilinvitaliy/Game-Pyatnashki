@@ -55,7 +55,19 @@ void play_game(RenderWindow &window, bool &flag_close) {
 
         fon_gamesprite.setPosition(0,0);
         psprite.setPosition(0,0);
- 
+        
+        
+	 Music music;//создаем объект музыки
+        music.openFromFile("../music/music_fon.ogg");//загружаем файл
+        music.play();//воспроизводим музыку
+
+        Music music_end;//создаем объект музыки
+        music_end.openFromFile("../music/music_fon_end.ogg");//загружаем файл
+
+
+        bool flag_sound=true;
+
+
    while (!Keyboard::isKeyPressed(Keyboard::Escape)) {
 
     Event event;
