@@ -3,7 +3,7 @@
 void play_game(RenderWindow &window, bool &flag_close) {
   bool flag_upor = true;
   vector<int> a(16);
-  int pyat[4][4];
+  int pyat[4][4],cou=0;
 
    Texture fon_game;
    fon_game.loadFromFile("../images/fon_game.jpg");
@@ -27,7 +27,36 @@ void play_game(RenderWindow &window, bool &flag_close) {
    Sprite sound_no_sprite(sound_no);
    sound_no_sprite.setPosition(600,10);
 
-  while (!Keyboard::isKeyPressed(Keyboard::Escape)) {
+   Font font;
+        if (!font.loadFromFile("ar2.ttf"))
+        {
+         // ошибка...
+        }
+        Text count;
+
+        count.setFont(font);
+        count.setCharacterSize(60);
+        count.setColor(Color::White);
+        count.setPosition(250,113);
+        Text timer;
+        timer.setFont(font);
+        timer.setCharacterSize(45);
+        timer.setColor(Color::White);
+         timer.setPosition(370,230);
+        
+
+
+        Text ed;
+        ed.setFont(font);
+        ed.setCharacterSize(45);
+        ed.setColor(Color::White);
+
+
+
+        fon_gamesprite.setPosition(0,0);
+        psprite.setPosition(0,0);
+ 
+   while (!Keyboard::isKeyPressed(Keyboard::Escape)) {
 
     Event event;
     while (window.pollEvent(event)) {
