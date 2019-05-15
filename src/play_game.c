@@ -1,9 +1,14 @@
 #include "pyatnashki.h"
 
+
+//extern void zapolnenie(vector<int>&,int(*)[4],int);
+
+
 void play_game(RenderWindow &window, bool &flag_close) {
   bool flag_upor = true;
   vector<int> a(16);
-  int pyat[4][4],cou=0;
+  int pyat[4][4],cou=0,i=0,j=0;
+//  zapolnenie(a, pyat, 5);
 
    Texture fon_game;
    fon_game.loadFromFile("../images/fon_game.jpg");
@@ -68,7 +73,7 @@ void play_game(RenderWindow &window, bool &flag_close) {
         bool flag_sound=true;
 
 
-    while(!Keyboard::isKeyPressed(Keyboard::Escape))
+       while(!Keyboard::isKeyPressed(Keyboard::Escape))
     {
         Vector2i pos = Mouse::getPosition(window);
         int x = (pos.x-50)/50;
@@ -82,7 +87,7 @@ void play_game(RenderWindow &window, bool &flag_close) {
             {
                 if (Mouse::isButtonPressed(Mouse::Left))
                 {
-                   
+                    
 
                     if(y==0&&x==11&&flag_sound==true)
                     {
@@ -114,9 +119,44 @@ void play_game(RenderWindow &window, bool &flag_close) {
         }
 
 
-    window.clear();
-    window.draw(fon_gamesprite);
-    window.display();
-  
-}
+        window.clear();
+
+        window.draw(fon_gamesprite);
+        for (int i=0,y=20;i<4;i++,y+=50)
+                    for (int j=0,x=50;j<4;j++,x+=50)
+                    {
+                        {
+                            psprite.setTextureRect(IntRect((pyat[i][j])*50,0,50,50));
+                            psprite.setPosition(x,y);
+                            window.draw(psprite);
+                        }
+
+                    }
+                ostringstream playercount;
+                playercount << cou;
+               count.setString(playercount.str());//задаем строку тексту и вызываем сформированную выше строку методом .str()
+                count.setPosition(370,170);//задаем позицию текста, отступая от центра камеры
+
+                
+
+
+
+
+
+
+        if(flag_sound)
+        {
+            window.draw(sound_yes_sprite);
+        }else{
+            window.draw(sound_no_sprite);
+        }
+        music.setLoop(true);
+        window.draw(count);
+        window.draw(timer);
+        window.draw(ed);
+
+        window.display();
+         
+        
+    }
 }
