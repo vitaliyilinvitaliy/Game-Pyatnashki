@@ -1,14 +1,14 @@
 #include "pyatnashki.h"
 
 
-//extern void zapolnenie(vector<int>&,int(*)[4],int);
+extern void zapolnenie(vector<int>&,int(*)[4],int);
 extern void write_records(int,clock_t);
 
 void play_game(RenderWindow &window, bool &flag_close) {
   bool flag_upor = true;
   vector<int> a(16);
   int pyat[4][4],cou=0,i=0,j=0;
-//  zapolnenie(a, pyat, 5);
+  zapolnenie(a, pyat, 5);
    
    clock_t timer_start=clock();
    clock_t timer_finish=0;
