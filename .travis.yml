@@ -5,7 +5,7 @@ dist: xenial
 compiler:
         -gcc
 
-SFML_script:
+before_script:
   cd src
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz -O /tmp/sfml.tar.gz
   - tar -xvf /tmp/sfml.tar.gz
