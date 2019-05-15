@@ -6,10 +6,25 @@ compiler:
         -gcc
 
 before_script:
-  - wget http://sfml-dev.org/download/sfml/2.1/SFML-2.1-linux-gcc-64bits.tar.bz2 -O /tmp/sfml.tar.bz2
-  - tar -xjvf /tmp/sfml.tar.bz2
-  - sudo cp -r SFML-2.1/* /usr/
-  - sudo apt-get install -y libjpeg62-dev libsndfile1-dev libglew1.5 libglew1.5-dev libfreetype6 libjpeg-turbo8 libjpeg8 libopenal-data libopenal1  libxrandr2 libxrender1 libsoil1
+  - set -e
+  - mkdir sfml_install
+  # TODO: Maybe investigate why the certificate checks for the SFML sources fail
+  - wget http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip --no-check-certificate
+  - unzip -q SFML-2.5.1-sources.zip
+  - pushd SFML-2.5.1 && mkdir build && cd build && cmake .. && make
+  - make DESTDIR=/home/travis/build/jeremyletang/rust-sfml/sfml_install install
+  - popd
+  - wget http://www.sfml-dev.org/files/CSFML-2.5-sources.zip --no-check-certificate
+  - unzip -q CSFML-2.5-sources.zip
+  - pushd CSFML-2.5
+  - mkdir build && cd build && cmake -DSFML_DIR='/home/travis/build/jeremyletang/rust-sfml/sfml_install/usr/local/lib/cmake/SFML/' .. && make
+  - make DESTDIR=/home/travis/build/jeremyletang/rust-sfml/sfml_install install
+  - popd
+  - mkdir .cargo
+  - mv .travis.cargo.config .cargo/config
+  - cargo build --verbose
+  - cargo test --verbose -- --skip font --skip audio --skip window --skip graphics
+  - cargo doc --verbose
 
 script:
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code && make 
