@@ -10,6 +10,7 @@ os: linux
       packages: ['clang-8.3.0', 'cmake']
   env: COMPILER=clang++-8.3.0
 
+
 before_script:
   
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz -O /tmp/sfml.tar.gz
@@ -24,4 +25,6 @@ before_script:
   
   
 script:
+
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code && make all 
+
