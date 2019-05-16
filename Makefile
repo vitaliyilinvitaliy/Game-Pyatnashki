@@ -1,16 +1,22 @@
 CFLAGS = -Wall 
 SFML = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 OBJ = g++ $(CFLAGS) -c $< -o $@ $(SFML) 
- 
+TEST = g++ $(GFAGS) -I thirtdparty/catch2 -c $< -o $@
+
+
+
 .PHONY: clean 
 
-all: folder1 folder2 bin/pyatnashki.exe
+all: folder1 folder2 folder3 bin/pyatnashki.exe
 
 folder1:
 	mkdir -p build/src
 
 folder2:
 	mkdir -p bin
+
+folder3:
+	mkdir -p build/test
 
 
 bin/pyatnashki.exe: build/src/main.o build/src/menu.o build/src/records.o build/src/sort_dat.o build/src/write_records.o build/src/play_game.o build/src/zapolnenie.o build/src/check.o build/src/proverka.o build/src/dvig.o 
@@ -45,6 +51,16 @@ build/src/proverka.o: src/proverka.c src/pyatnashki.h
 
 build/src/dvig.o: src/dvig.c src/pyatnashki.h
 	$(OBJ)
+
+bin/pyatnashki-test.exe: build/test/test.o build/test/proverka-test.o
+	g++ $(CFLAGS) -I thirtdparty/catch2  $^ -o $@
+
+build/test/test.o: test/test.c test/pyatnashki.h
+	$(TEST)	
+
+build/test/proverka-test.o: test/proverka-test.c test/pyatnashki.h
+	$(TEST)
+
 
 clean:
 	rm -R build
