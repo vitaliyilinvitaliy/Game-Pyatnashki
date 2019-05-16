@@ -2,7 +2,7 @@
 
 extern record rec;
 
-void sort_dat(vector<vector<int>> &s) {
+void sort_dat(vector<vector<int> /**/> &s) {
   FILE *tf;
 
   tf = fopen("records.dat", "ab+");

@@ -1,7 +1,7 @@
 CFLAGS = -Wall 
 SFML = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-OBJ = g++ $(CFLAGS) -c $< -o $@ $(SFML) 
-TEST = g++ $(GFAGS) -I thirtdparty/catch2 -c $< -o $@
+OBJ = g++ -std=c++11 $(CFLAGS) -c $< -o $@ $(SFML) 
+TEST = g++ -std=c++11 $(GFAGS) -I thirtdparty/catch2 -c $< -o $@
 
 
 
