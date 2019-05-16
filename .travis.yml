@@ -16,7 +16,12 @@ addons:
       - cmake
 
 before_script:
-  
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -q
+  - sudo apt-get install gcc-7 g++-7 -y
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 1000 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+  - sudo update-alternatives --auto gcc
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz -O /tmp/sfml.tar.gz
   - tar -xvf /tmp/sfml.tar.gz
   - sudo cp -r SFML-2.5.1/* /usr/
@@ -24,13 +29,6 @@ before_script:
   - tar -xvf /tmp/thor.tar.gz
   - sudo cp -r thor-v2.0-linux64-make/* /usr/
   - sudo apt-get install -y libjpeg62-dev libsndfile1-dev libglew1.5 libglew1.5-dev libfreetype6 libjpeg-turbo8 libjpeg8 libopenal-data libopenal1  libxrandr2 libxrender1 libsoil1 libxcb-image0 libxcb-randr0 libudev1
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get update -q
-  - sudo apt-get install gcc-7 g++-7 -y
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 1000 --slave /usr/bin/g++ g++ /usr/bin/g++-7
-  - sudo update-alternatives --auto gcc
-  
   
   
 script:
