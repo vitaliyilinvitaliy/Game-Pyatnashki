@@ -2,8 +2,13 @@ language: C++
 
 dist: xenial
 
-compiler:
-        -gcc
+os: linux
+  compiler: clang
+  addons:
+    apt:
+      sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-8.3.0', 'kalakris-cmake']
+      packages: ['clang-8.3.0', 'cmake']
+  env: COMPILER=clang++-8.3.0
 
 before_script:
   
@@ -19,4 +24,4 @@ before_script:
   
   
 script:
-  - make 
+  - git ls-files src/ | xargs clang-format -i && git diff --exit-code && make all 
