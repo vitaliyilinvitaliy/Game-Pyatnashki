@@ -52,7 +52,7 @@ build/src/proverka.o: src/proverka.c src/pyatnashki.h
 build/src/dvig.o: src/dvig.c src/pyatnashki.h
 	$(OBJ)
 
-bin/pyatnashki-test.exe: build/test/test.o build/test/proverka-test.o
+bin/pyatnashki-test.exe: build/test/test.o build/test/proverka-test.o build/test/check-test.o build/test/dvig-test.o
 	g++ $(CFLAGS) -I thirtdparty/catch2  $^ -o $@
 
 build/test/test.o: test/test.c test/pyatnashki.h
@@ -60,6 +60,13 @@ build/test/test.o: test/test.c test/pyatnashki.h
 
 build/test/proverka-test.o: test/proverka-test.c test/pyatnashki.h
 	$(TEST)
+
+build/test/check-test.o: test/check-test.c test/pyatnashki.h
+	$(TEST)
+
+build/test/dvig-test.o: test/dvig-test.c test/pyatnashki.h
+	$(TEST)
+
 
 
 clean:
