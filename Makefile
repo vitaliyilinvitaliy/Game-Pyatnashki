@@ -63,5 +63,5 @@ build/test/proverka-test.o: test/proverka-test.c test/pyatnashki.h
 
 
 clean:
-	rm -R build
-	rm -R bin
+	rm -rf build
+	rm -rf bin
