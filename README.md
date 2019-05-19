@@ -10,7 +10,7 @@
 ```
 $ git clone https://github.com/vitaliyilinvitaliy/Game-Pyatnashki.git
 $ cd Game-Pyatnashki/
-$ make bin/pyatnashki.exe
+$ make 
 ```
 ### *Запуск*
 ```
