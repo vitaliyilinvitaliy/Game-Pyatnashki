@@ -40,3 +40,7 @@ cd bin/
 ```
 sudo apt-get install libsfml-dev
 ```
+## Системные требования:
+ 
+ ### Операционная система: 
+ Linux Ubuntu
