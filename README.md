@@ -23,6 +23,7 @@ cd bin/
 $ git clone https://github.com/vitaliyilinvitaliy/Game-Pyatnashki.git
 $ cd Game-Pyatnashki/
 $ git checkout testing_issue-15
+$ make all
 $ make bin/pyatnashki-test.exe
 ```
 ### *Запуск*
