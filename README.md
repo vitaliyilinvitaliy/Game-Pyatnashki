@@ -44,3 +44,5 @@ sudo apt-get install libsfml-dev
  
  ### Операционная система: 
  Linux Ubuntu
+### Дополнительно:
+Наличие библиотеки SFML
