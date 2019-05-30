@@ -44,18 +44,18 @@ void play_game(RenderWindow &window, bool &flag_close) {
 
 	count.setFont(font);
 	count.setCharacterSize(60);
-	count.setColor(Color::White);
+	count.setFillColor(Color::White);
 	count.setPosition(250, 113);
 	Text timer;
 	timer.setFont(font);
 	timer.setCharacterSize(45);
-	timer.setColor(Color::White);
+	timer.setFillColor(Color::White);
 	timer.setPosition(370, 230);
 
 	Text ed;
 	ed.setFont(font);
 	ed.setCharacterSize(45);
-	ed.setColor(Color::White);
+	ed.setFillColor (Color::White);
 
 	fon_gamesprite.setPosition(0, 0);
 	psprite.setPosition(0, 0);
@@ -161,7 +161,7 @@ void play_game(RenderWindow &window, bool &flag_close) {
 	Text end_play;
 	end_play.setFont(font);
 	end_play.setCharacterSize(60);
-	end_play.setColor(Color::White);
+	end_play.setFillColor(Color::White);
 	timer.setPosition(140, 53);
 	count.setPosition(245, 113);
 	music_end.play();  //воспроизводим музыку
