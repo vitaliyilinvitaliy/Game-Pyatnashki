@@ -1,10 +1,10 @@
 #include "pyatnashki.h"
 
 record rec;
-extern void sort_dat(vector<vector<int> > &);
+extern void sort_dat(vector<vector<int> /**/> &);
 
 void records(RenderWindow &app, bool &flag_close) {
-  vector<vector<int> > s;
+  vector<vector<int> /**/> s;
   sort_dat(s);
   FILE *tf;
 
