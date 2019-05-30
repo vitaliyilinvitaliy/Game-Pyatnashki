@@ -29,25 +29,25 @@ void menu(RenderWindow &window) {
   text1.setFont(font);
   text1.setString("START");
   text1.setCharacterSize(60);
-  text1.setColor(Color::White);
+  text1.setFillColor(Color::White);
 
   // rules
   text2.setFont(font);
   text2.setString("RULES");
   text2.setCharacterSize(60);
-  text2.setColor(Color::White);
+  text2.setFillColor(Color::White);
 
   // records
   text3.setFont(font);
   text3.setString("RECORDS");
   text3.setCharacterSize(60);
-  text3.setColor(Color::White);
+  text3.setFillColor(Color::White);
 
   // exit
   text4.setFont(font);
   text4.setString("EXIT");
   text4.setCharacterSize(60);
-  text4.setColor(Color::White);
+  text4.setFillColor(Color::White);
 
   bool isMenu = 1;
   int menuNum = 0;
@@ -65,27 +65,27 @@ void menu(RenderWindow &window) {
         isMenu = false;
       }
     }
-    text1.setColor(Color::White);
-    text2.setColor(Color::White);
-    text3.setColor(Color::White);
-    text4.setColor(Color::White);
+    text1.setFillColor(Color::White);
+    text2.setFillColor(Color::White);
+    text3.setFillColor(Color::White);
+    text4.setFillColor(Color::White);
     menuNum = 0;
     window.clear();
 
     if (IntRect(150, 30, 170, 45).contains(Mouse::getPosition(window))) {
-      text1.setColor(Color(0, 202, 0));
+      text1.setFillColor(Color(0, 202, 0));
       menuNum = 1;
     }
     if (IntRect(150, 82, 170, 45).contains(Mouse::getPosition(window))) {
-      text2.setColor(Color(0, 202, 0));
+      text2.setFillColor(Color(0, 202, 0));
       menuNum = 2;
     }
     if (IntRect(150, 135, 170, 45).contains(Mouse::getPosition(window))) {
-      text3.setColor(Color(0, 202, 0));
+      text3.setFillColor(Color(0, 202, 0));
       menuNum = 3;
     }
     if (IntRect(150, 180, 170, 45).contains(Mouse::getPosition(window))) {
-      text4.setColor(Color(0, 202, 0));
+      text4.setFillColor(Color(0, 202, 0));
       menuNum = 4;
     }
 
