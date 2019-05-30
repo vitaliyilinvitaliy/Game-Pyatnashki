@@ -8,7 +8,7 @@ extern void check(int (*)[4], bool &);
 void play_game(RenderWindow &window, bool &flag_close) {
 	bool flag_upor = true;
 	vector<int> a(16);
-	int pyat[4][4], cou = 0, i = 0, j = 0;
+	int pyat[4][4], cou = 0;
 	zapolnenie(a, pyat, 5);
 
 	clock_t timer_start = clock();

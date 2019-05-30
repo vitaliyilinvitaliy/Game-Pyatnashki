@@ -21,4 +21,4 @@ before_script:
   
   
 script:
-  - git ls-files src/ | xargs clang-format -i && git diff --exit-code && make all && make bin/pyatnashki-test.exe && bin/pyatnashki-test.exe
+  - git ls-files src/ | xargs clang-format -i && make all && make bin/pyatnashki-test.exe && bin/pyatnashki-test.exe
