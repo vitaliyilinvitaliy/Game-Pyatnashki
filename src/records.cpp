@@ -18,20 +18,20 @@ void records(RenderWindow &app, bool &flag_close) {
   Text rec_;
   rec_.setFont(font);
   rec_.setCharacterSize(45);
-  rec_.setColor(Color::White);
+  rec_.setFillColor(Color::White);
 
   Text head;
   head.setFont(font);
-  head.setString("PLAYER\t\t\tCOUNT\t\t\t\t\TIME");
+  head.setString("PLAYER\t\t\tCOUNT\t\t\t\tTIME");
   head.setCharacterSize(45);
-  head.setColor(Color::Green);
+  head.setFillColor(Color::Green);
   head.setPosition(50, 5);
 
   Text del;
   del.setFont(font);
   del.setString("To clear the list of records, press the key 'Delete'");
   del.setCharacterSize(30);
-  del.setColor(Color::Red);
+  del.setFillColor(Color::Red);
   del.setPosition(50, 310);
 
   while (!Keyboard::isKeyPressed(Keyboard::Escape)) {
@@ -69,7 +69,7 @@ void records(RenderWindow &app, bool &flag_close) {
     app.draw(del);
 
     int x = 50, y = 50;
-    for (int i = 0; i < s.size(); i++) {
+    for (int i = 0; i < 8; i++) {
       ostringstream playerrec_i, playerrec_count, playerrec_timer;
       playerrec_i << i + 1;
       playerrec_count << s[i][0];

@@ -4,7 +4,7 @@ extern void records(RenderWindow &, bool &);
 extern void play_game(RenderWindow &, bool &);
 
 void menu(RenderWindow &window) {
-  bool flag_close = false;
+  
   Texture fon;
   fon.loadFromFile("../images/fon.jpg");
   Sprite fonsprite(fon);
