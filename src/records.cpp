@@ -69,7 +69,7 @@ void records(RenderWindow &app, bool &flag_close) {
     app.draw(del);
 
     int x = 50, y = 50;
-    for (int i = 0; i < 8; i++) {
+    for (size_t i = 0; i < s.size(); i++) {
       ostringstream playerrec_i, playerrec_count, playerrec_timer;
       playerrec_i << i + 1;
       playerrec_count << s[i][0];
